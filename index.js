@@ -15,6 +15,10 @@ botClient.on('message', function(message) {
             '<:hourglass:445525485037027340>').catch(console.error)
         }, 1000 * 60 * 60);
     }
+    
+    if(message.content === '!commands') {
+        message.channel.send('Eh non, bien tenté mais pas de commande, juste de l\'attente !')
+    }
 })
 
 //Login du bot sur notre serveur
