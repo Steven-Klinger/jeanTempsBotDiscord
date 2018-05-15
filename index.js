@@ -17,7 +17,7 @@ botClient.on('message', function(message) {
     }
     
     if(message.content === '!commands') {
-        message.channel.send('Eh non, bien tenté mais pas de commande, juste de l\'attente !')
+        message.channel.send('Eh non, bien tenté mais pas de commande, juste de l\'attente !').catch(console.error)
     }
 })
 
