@@ -13,10 +13,11 @@ botClient.on('message', function(message) {
         Loop.action(message);
     }
     
-    if(message.content === '!commands') {
-        message.channel.send('Eh non, bien tenté mais pas de commande, juste de l\'attente !').catch(console.error)
+    if(message.content === '!help') {
+        message.channel.send('!loop on : Permet d\'activer la boucle de la Gamescom !').catch(console.error)
+        message.channel.send('!loop off : Permet d\'arrêter la boucle de la Gamescom !').catch(console.error)
     }
 })
 
 //Login du bot sur notre serveur
-botClient.login(process.env.TOKEN);
+botClient.login(process.env.TOKEN); 
