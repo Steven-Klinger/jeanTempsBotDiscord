@@ -19,4 +19,4 @@ botClient.on('message', function(message) {
 })
 
 //Login du bot sur notre serveur
-botClient.login('NDQ2MDQ2NDQ0MTM1MjUxOTk4.DdzUpA.PnwgF-reMqfBlqKNAJR9K0SZleE');
+botClient.login(process.env.TOKEN);
