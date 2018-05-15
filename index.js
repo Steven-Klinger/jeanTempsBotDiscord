@@ -1,19 +1,16 @@
 const Discord = require('discord.js')
-const botClient = new Discord.Client();
+const botClient = new Discord.Client()
+const Loop = require('./commands/Loop')
 
 //Client opérationnel 
 botClient.on('ready', function() {
-    botClient.user.setActivity('Attends des réponses').catch(console.error);
+    botClient.user.setActivity('Est ébahi !').catch(console.error);
 })
 
 botClient.on('message', function(message) {
-    // envoie un message toutes les heures après le $loop
-    if(message.content === '$loop') {
-        var interval = setInterval (function () {
-            message.channel.send('<:hourglass_flowing_sand:445953586560761895> ' +
-            '@everyone vous serez priés de répondre et/ou de prendre votre ticket pour la Gamescom :)' +
-            '<:hourglass:445525485037027340>').catch(console.error)
-        }, 1000 * 60 * 60);
+
+    if(Loop.match(message)){
+        Loop.action(message);
     }
     
     if(message.content === '!commands') {
@@ -22,4 +19,4 @@ botClient.on('message', function(message) {
 })
 
 //Login du bot sur notre serveur
-botClient.login(process.env.TOKEN);
+botClient.login('NDQ2MDQ2NDQ0MTM1MjUxOTk4.DdzUpA.PnwgF-reMqfBlqKNAJR9K0SZleE');
